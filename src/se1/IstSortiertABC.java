@@ -20,6 +20,8 @@ public class IstSortiertABC implements IstSortiertInterface {
 	
 	@Override
 	public boolean isWellSorted(String[] sequence) {
+		if(sequence.length<=1) //Leere Strings erkennen
+			return true;
 		for(int i = 0; i<sequence.length-1;i++) {
 			if(abhaengigkeit(sequence[i], sequence[i+1], abhang)==false) {
 				return false;
@@ -33,10 +35,9 @@ public class IstSortiertABC implements IstSortiertInterface {
 		abhang = c;
 		
 	}
-	
+
 	@Override
 	public String[][] getAbhang() {
 		return abhang;
 	}
-	
 }
