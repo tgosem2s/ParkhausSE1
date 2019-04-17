@@ -25,5 +25,12 @@ public class SortedTest {
 	public void isWellSorted_LeererString_True() {
 		assertTrue (isIF.isWellSorted(new String[] {""}));
 	}
+	
+	@Test
+	public void isWellSorted_DoppelteTask_False() {
+		assertFalse (isIF.isWellSorted(new String[] {"A" , "A", "C", "D"}));
+		assertFalse (isIF.isWellSorted(new String[] {"A" , "B", "B", "D"}));
+		assertFalse (isIF.isWellSorted(new String[] {"A" , "B", "D", "D"}));
+	}
 }
 
