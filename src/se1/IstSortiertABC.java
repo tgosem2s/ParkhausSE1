@@ -22,6 +22,8 @@ public class IstSortiertABC implements IstSortiertInterface {
 	public boolean isWellSorted(String[] sequence) {
 		if(sequence.length<=1) //Leere Strings erkennen
 			return true;
+		if(multiTasksCheck(sequence)==true)
+			return false;
 		for(int i = 0; i<sequence.length-1;i++) {
 			if(abhaengigkeit(sequence[i], sequence[i+1], abhang)==false) {
 				return false;
@@ -29,7 +31,18 @@ public class IstSortiertABC implements IstSortiertInterface {
 		}
 		return true;
 	}
-
+	
+	public boolean multiTasksCheck(String[] s) { //Check ob in der Sequenz Tasks mehrfach sind
+		for(int i = 0; i<s.length-1; i++) {
+			for(int j = i+1; j<s.length; j++) {
+				if(s[i].equals(s[j])) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 	@Override
 	public void setAbhang(String[][] c) {
 		abhang = c;
