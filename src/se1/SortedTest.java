@@ -38,13 +38,5 @@ public class SortedTest {
 		assertFalse (isIF.isWellSorted(new String[] {"C" ,"D", "A"}));
 		assertTrue (isIF.isWellSorted(new String[] {"A" ,"B", "D"}));
 	}
-	
-	@Test
-	public void isWellSorted_Transitiv_TrueandFalse() {
-		assertFalse (isIF.isWellSorted(new String[] {"D" ,"A"}));
-		assertFalse (isIF.isWellSorted(new String[] {"D" ,"B"}));
-		assertTrue (isIF.isWellSorted(new String[] {"A" ,"D"}));
-		assertTrue (isIF.isWellSorted(new String[] {"B" ,"D"}));
-	}
 }
 
