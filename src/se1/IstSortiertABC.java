@@ -25,8 +25,10 @@ public class IstSortiertABC implements IstSortiertInterface {
 		if(multiTasksCheck(sequence)==true)
 			return false;
 		for(int i = 0; i<sequence.length-1;i++) {
-			if(abhaengigkeit(sequence[i], sequence[i+1], abhang)==false) {
-				return false;
+			for(int j = i+1; j<sequence.length; j++) {
+				if(abhaengigkeit(sequence[i], sequence[j], abhang)==false) {
+					return false;
+			}
 			}
 		}
 		return true;
