@@ -32,5 +32,11 @@ public class SortedTest {
 		assertFalse (isIF.isWellSorted(new String[] {"A" , "B", "B", "D"}));
 		assertFalse (isIF.isWellSorted(new String[] {"A" , "B", "D", "D"}));
 	}
+	
+	@Test
+	public void isWellSorted_KompletterString_TrueandFalse() {
+		assertFalse (isIF.isWellSorted(new String[] {"C" ,"D", "A"}));
+		assertTrue (isIF.isWellSorted(new String[] {"A" ,"B", "D"}));
+	}
 }
 
