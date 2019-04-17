@@ -20,5 +20,10 @@ public class SortedTest {
 		assertTrue (isIF.isWellSorted(new String[]{ "A" , "B", "C", "D" }));
 		assertFalse (isIF.isWellSorted(new String[]{ "D" , "C", "B", "A" }));
 	}
+	
+	@Test
+	public void isWellSorted_LeererString_True() {
+		assertTrue (isIF.isWellSorted(new String[] {""}));
+	}
 }
 
